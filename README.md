@@ -1,2 +1,2 @@
 # Scribbler
-It's a simply scribbling tool.
+It's simply a scribbling tool.
