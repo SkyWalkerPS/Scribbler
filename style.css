@@ -12,6 +12,7 @@ body{
     padding-left: 1.5vw;
 }
 canvas{
+    display: inline;
     margin-top: 3%;
     border-radius: 10px;
     box-shadow:11px 9px 15px 3px #333232, -16.52px -16.52px 29px #7e7e7e;
@@ -31,10 +32,17 @@ canvas{
     border-right: 1.5px solid black;
     border-bottom: 1.5px solid black;
 }
-#clear-canvas{
+.btn{
     margin-left: 20px;
     display: inline-block;
     height: 23px;
     width: 115px;
     border-radius: 4px;
+}
+#Erase, #clear-canvas, #download{
+    margin-top: 10px;
+    margin-left: 5px;
+}
+#downloadable{
+    display: none;
 }
