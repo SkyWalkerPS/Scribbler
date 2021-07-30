@@ -13,17 +13,20 @@
 
 <body>
     <form id="stroke-setting">
-        <label for="number">Set the value for stroke</label>
-        <input type="number" name="number" id="number">
+        <label for="number">Set the value for stroke :</label>
+        <input type="number" name="number" id="number" value="1" min="1">
         <button type="button" id="stroke-setter">Set</button>
     </form>
+    
+    <button type="button" id="clear-canvas">Clear Canvas</button>
+    
 
     <br>
 
-    <div id="bgColorPicker">
+    <!-- <div id="bgColorPicker">
         Pick the color for background :
         <div id="black"></div><div id="white"></div><div id="red"></div>
-    </div>
+    </div> -->
     <div id="result"></div>
 </body>
 
