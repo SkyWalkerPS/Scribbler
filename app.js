@@ -47,7 +47,7 @@ document.getElementById('Erase').addEventListener('click', function () {
 function setup() {
   let x =screen.width;
   let y = screen.height;
-  createCanvas(x, y);
+  createCanvas(x*90/100, y*90/100);
   background("black");
 }
 
