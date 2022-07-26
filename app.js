@@ -1,42 +1,63 @@
-var value;
+var value=1;
 document.getElementById('stroke-setter').addEventListener('click', function () {
   value = document.getElementById('number').value;
 });
-// console.log(value);
-
-
-var bgvalue="black";
-document.getElementById('red').addEventListener('click', function () {
-  bgvalue = "red";
+document.getElementById('number').addEventListener("input", ()=>{
+  value = document.getElementById('number').value;
 });
-document.getElementById('black').addEventListener('click', function () {
-  bgvalue = "black";
+
+document.getElementById('clear-canvas').addEventListener('click', function () {
+    clear();
+    background("black");
 });
-document.getElementById('white').addEventListener('click', function () {
-  bgvalue = "white";
-});
-// console.log(bgvalue);
 
 
+
+//download feature
+const myCanvas = document.getElementsByTagName('canvas');
+const btnDownload = document.getElementById('download');
+
+btnDownload.addEventListener('click', ()=>{
+  const dataURI = myCanvas[0].toDataURL();
+  document.getElementById('downloadable').src = dataURI;
+  document.getElementById('linker').href = dataURI;
+})
+
+
+
+
+
+// Eraser Feature
+var f=1;
+document.getElementById('Erase').addEventListener('click', function () {
+  if(f==1){
+    document.getElementById('Erase').innerHTML="Untoggle Eraser";
+    f=0;
+  }
+  else{
+    document.getElementById('Erase').innerHTML="Toggle Eraser";
+    f=1;
+  }
+});
+
+
+
+
+//P5 functions
 function setup() {
-  createCanvas(screen.width, screen.height);
-  background(bgvalue);
+  let x =screen.width;
+  let y = screen.height;
+  createCanvas( x*94/100, y*65/100);
+  background("black");
 }
 
 function draw() {
   // do nothing
 }
 
-
 function mouseDragged() {
-  stroke(225);
+  if(f==1)stroke(255);
+  else stroke(0);
   strokeWeight(value);
   line(mouseX, mouseY, pmouseX, pmouseY);
 }
-
-
-
-
-
-
-
